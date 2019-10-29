@@ -20,19 +20,39 @@ func color(_ rgbColor: Int) -> UIColor{
 }
 
 class ViewController: UIViewController, FaveButtonDelegate{
+    var tailTextString: String = "dddd"
     
-    @IBOutlet var heartButton: FaveButton?
-    @IBOutlet var loveButton : FaveButton?
+    var tailTextLabel: UILabel {
+        get {
+            return UILabel(frame: .zero)
+        }
+    }
+    var fav: FaveButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // optional, set default selected fave-buttons with initial
         // startup animation disabled.
-        self.heartButton?.setSelected(selected: true, animated: false)
+
         
-        self.loveButton?.setSelected(selected: true, animated: false)
-        self.loveButton?.setSelected(selected: false, animated: false)
+        fav = FaveButton(frame: .zero, faveIconNormal: UIImage(named: "like")!,faveIconSelected: UIImage(named: "heart") , setCons: {
+            fav in
+            fav.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addSubview(fav)
+            NSLayoutConstraint.activate([
+                       fav.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
+                       fav.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
+                       fav.widthAnchor.constraint(equalToConstant: 30),
+                       fav.heightAnchor.constraint(equalToConstant: 30)
+                   ])
+            fav.layoutIfNeeded()
+        })
+        self.fav.delegate = self
+        self.fav.addTailText(view: self.view)
+        fav.faveIcon.iconColor = .red
+        
     }
     
     let colors = [
@@ -44,14 +64,13 @@ class ViewController: UIViewController, FaveButtonDelegate{
     ]
     
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool) {
+        faveButton.showFirstImage()
     }
     
     func faveButtonDotColors(_ faveButton: FaveButton) -> [DotColors]?{
-        if( faveButton === heartButton || faveButton === loveButton){
-            return colors
-        }
         return nil
     }
+    var hh = 1
 }
 
 

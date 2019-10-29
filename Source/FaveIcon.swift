@@ -26,9 +26,13 @@ import UIKit
 
 class FaveIcon: UIView {
     
-    var iconColor: UIColor = .gray
+    var iconColor: UIColor = .gray {
+        didSet {
+            self.iconLayer?.fillColor = iconColor.cgColor
+        }
+    }
     var iconImage: UIImage!
-    var iconLayer: CAShapeLayer!
+    var iconLayer: CAShapeLayer?
     var iconMask:  CALayer!
     var contentRegion: CGRect!
     var tweenValues: [CGFloat]?
@@ -45,6 +49,7 @@ class FaveIcon: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }
 
 
@@ -59,9 +64,7 @@ extension FaveIcon{
         onView.addSubview(faveIcon)
         
         (faveIcon, onView) >>- [.centerX,.centerY]
-        
         faveIcon >>- [.width,.height]
-        
         return faveIcon
     }
     
@@ -82,7 +85,7 @@ extension FaveIcon{
             $0.mask      = iconMask
         }
         
-        self.layer.addSublayer(iconLayer)
+        self.layer.addSublayer(iconLayer!)
     }
 }
 
@@ -90,7 +93,7 @@ extension FaveIcon{
 // MARK : animation
 extension FaveIcon{
     
-    func animateSelect(_ isSelected: Bool = false, fillColor: UIColor, duration: Double = 0.5, delay: Double = 0){
+    func animateSelect(_ isSelected: Bool = false, pre: Bool, fillColor: UIColor, duration: Double = 0.5, delay: Double = 0){
         let animate = duration > 0.0
         
         if nil == tweenValues && animate {
@@ -99,12 +102,12 @@ extension FaveIcon{
         
         CATransaction.begin()
         CATransaction.setDisableActions(true)
-            iconLayer.fillColor = fillColor.cgColor
+        iconLayer?.fillColor = fillColor.cgColor
         CATransaction.commit()
         
-        let selectedDelay = isSelected ? delay : 0
+        let selectedDelay = isSelected && !pre ? delay : 0
         
-        if isSelected {
+        if isSelected && !pre {
             self.alpha = 0
             UIView.animate(
                 withDuration: 0,

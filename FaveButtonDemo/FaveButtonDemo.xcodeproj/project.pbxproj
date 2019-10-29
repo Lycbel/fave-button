@@ -32,6 +32,9 @@
 		26FEF3461D0E159B00D75731 /* FaveButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FEF33F1D0E159B00D75731 /* FaveButton.framework */; };
 		26FEF3471D0E159B00D75731 /* FaveButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26FEF33F1D0E159B00D75731 /* FaveButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26FEF34F1D0E177900D75731 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FEF34E1D0E177900D75731 /* ImageAsset.swift */; };
+		A11594A42361B7AF004E756D /* FavCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118BA1E2361A581001D541F /* FavCount.swift */; };
+		A118BA1F2361A581001D541F /* FavCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118BA1E2361A581001D541F /* FavCount.swift */; };
+		A183DF0523618BBA00974982 /* Tucao.swift in Sources */ = {isa = PBXBuildFile; fileRef = A183DF0423618BBA00974982 /* Tucao.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,8 @@
 		26FEF3411D0E159B00D75731 /* FaveButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaveButton.h; sourceTree = "<group>"; };
 		26FEF3431D0E159B00D75731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26FEF34E1D0E177900D75731 /* ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		A118BA1E2361A581001D541F /* FavCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCount.swift; sourceTree = "<group>"; };
+		A183DF0423618BBA00974982 /* Tucao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tucao.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,7 @@
 				261A6A1A1D1DF8DB0040EBBC /* FaveIcon.swift */,
 				261A6A201D1DF8DB0040EBBC /* Ring.swift */,
 				261A6A211D1DF8DB0040EBBC /* Spark.swift */,
+				A118BA1E2361A581001D541F /* FavCount.swift */,
 			);
 			name = Source;
 			path = ../Source;
@@ -152,6 +158,7 @@
 				26FEF32F1D0E158100D75731 /* Assets.xcassets */,
 				26FEF3311D0E158100D75731 /* LaunchScreen.storyboard */,
 				26FEF3341D0E158100D75731 /* Info.plist */,
+				A183DF0423618BBA00974982 /* Tucao.swift */,
 			);
 			path = FaveButtonDemo;
 			sourceTree = "<group>";
@@ -236,7 +243,7 @@
 				TargetAttributes = {
 					26FEF3241D0E158100D75731 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9T9Q2EVV88;
+						DevelopmentTeam = BV8M24JLMN;
 						LastSwiftMigration = 0900;
 					};
 					26FEF33E1D0E159B00D75731 = {
@@ -251,6 +258,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -298,8 +306,10 @@
 				261A6A261D1DF8DB0040EBBC /* Geometry.swift in Sources */,
 				261A6A281D1DF8DB0040EBBC /* Ring.swift in Sources */,
 				261A6A251D1DF8DB0040EBBC /* Easing.swift in Sources */,
+				A118BA1F2361A581001D541F /* FavCount.swift in Sources */,
 				261A6A291D1DF8DB0040EBBC /* Spark.swift in Sources */,
 				26FEF34F1D0E177900D75731 /* ImageAsset.swift in Sources */,
+				A183DF0523618BBA00974982 /* Tucao.swift in Sources */,
 				26FEF3291D0E158100D75731 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11594A42361B7AF004E756D /* FavCount.swift in Sources */,
 				261A6A2A1D1DF9050040EBBC /* Constraints+.swift in Sources */,
 				261A6A2B1D1DF9050040EBBC /* Easing.swift in Sources */,
 				261A6A2C1D1DF9050040EBBC /* Geometry.swift in Sources */,
@@ -396,7 +407,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -445,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -460,9 +471,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9T9Q2EVV88;
+				DEVELOPMENT_TEAM = BV8M24JLMN;
 				INFOPLIST_FILE = FaveButtonDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xhamr.DemoFaveButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,9 +490,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9T9Q2EVV88;
+				DEVELOPMENT_TEAM = BV8M24JLMN;
 				INFOPLIST_FILE = FaveButtonDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xhamr.DemoFaveButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -503,7 +514,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FaveButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xhamr.FaveButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,7 +540,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FaveButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xhamr.FaveButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
