@@ -24,6 +24,15 @@
 
 import UIKit
 
+class FaveIconI: UIImageView {
+    var iconColor: UIColor = .gray {
+        didSet {
+            self.tintColor = iconColor
+        }
+    }
+}
+
+
 class FaveIcon: UIView {
     
     var iconColor: UIColor = .gray {

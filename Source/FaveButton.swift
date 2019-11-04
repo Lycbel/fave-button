@@ -28,7 +28,7 @@ import UIKit
 public typealias DotColors = (first: UIColor, second: UIColor)
 
 
-public protocol FaveButtonDelegate{
+public protocol FaveButtonDelegate: class{
     func faveButton(_ faveButton: FaveButton, didSelected selected: Bool)
     
     func faveButtonDotColors(_ faveButton: FaveButton) -> [DotColors]?
@@ -70,7 +70,7 @@ open class FaveButton: UIButton {
     open var circleFromColor: UIColor = UIColor(red: 221/255, green: 70/255,  blue: 136/255, alpha: 1)
     open var circleToColor: UIColor   = UIColor(red: 205/255, green: 143/255, blue: 246/255, alpha: 1)
     
-    open var delegate: FaveButtonDelegate?
+    open weak var delegate: FaveButtonDelegate?
     
     fileprivate(set) var sparkGroupCount: Int = 7
     
@@ -104,8 +104,7 @@ open class FaveButton: UIButton {
     
     public convenience init(frame: CGRect, faveIconNormal: UIImage?, faveIconSelected: UIImage?, setCons: (UIView) -> Void) {
         self.init(frame: frame)
-        let icons = UIImage(named: "like")
-        guard let icon = (faveIconNormal ?? icons) else{
+        guard let icon = faveIconNormal else{
             fatalError("missing image for normal state")
         }
         faveIconImage = icon
