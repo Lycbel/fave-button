@@ -82,7 +82,7 @@ open class FaveButton: UIButton {
     //var favCount: FavCount!
     fileprivate var animationsEnabled = true
     
-    public var applauseMode = true
+    public var applauseMode = false
     
     fileprivate var needRing = false
     fileprivate var selectAppearState: Bool = false
