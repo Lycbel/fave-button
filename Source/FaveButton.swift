@@ -174,12 +174,12 @@ extension FaveButton{
         showFirstImage()
     }
     
-    open func addTailText(view: UIView){
+    open func addTailText(view: UIView, tailTextLeading: CGFloat){
         tailTextLabel = (delegate!).tailTextLabel
         tailTextLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tailTextLabel)
-        (tailTextLabel, self) >>- [.centerY]
-        tailTextLabel.leadingAnchor.constraint(equalTo: self.trailingAnchor, constant: self.frame.width / 10).isActive = true
+        (tailTextLabel, self) >>- [.bottom]
+        tailTextLabel.leadingAnchor.constraint(equalTo: self.trailingAnchor, constant: tailTextLeading).isActive = true
         tailTextLabel.text = delegate!.tailTextString
     }
     
